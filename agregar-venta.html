@@ -102,8 +102,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Venta</h6>
-                        <a class="collapse-item" href="administrar-venta.html">Administrar Venta</a>
-                        <a class="collapse-item" href="agregar-venta.html">Agregar Venta</a>
+                        <a class="collapse-item" href="agregar-venta.html">Realizar Venta</a>
                         
                     </div>
                 </div>
@@ -207,44 +206,68 @@
                              
                            </div>
                           </div>
+                          <br><br>
                           <div class="panel-body">
-                             <table class="table table-bordered">
-                               <thead>
-                                <br>
-                                <th> Producto </th>
-                                <th> Qty </th>
-                                <th> Precio </th>
-                                <th> Total </th>
-                                <th> Fecha</th>
-                                <th> Procesar</th>
-                               </thead>
-                                 <tbody  id="product_info">
-                                    <tr>
-                                    <form method="post" action="">
-                                      <td id="s_name">
-                                        <input type="text" class="form-control" id="sug_input" name="title" value="">
-                                        <div id="result" class="list-group"></div>
-                                      </td>
-                                      <td id="s_qty">
-                                        <input type="text" class="form-control" name="quantity" value="">
-                                      </td>
-                                      <td id="s_price">
-                                        <input type="text" class="form-control" name="price" value="" >
-                                      </td>
-                                      <td>
-                                        <input type="text" class="form-control" name="total" value="">
-                                      </td>
-                                      <td id="s_date">
-                                        <input type="date" class="form-control datepicker" name="date" data-date-format="" value="">
-                                      </td>
-                                      <td>
-                                        <button type="submit" name="update_sale" class="btn btn-primary">Realizar Venta</button>
-                                      </td>
-                                    </form>
-                                    </tr>
-                                 </tbody>
-                             </table>
-                      
+
+                            <div class=" row">
+                                <div class="p-2  text-center col-5">
+                                    <label for="product-select"><h4>Producto:</h4></label>                            
+                                <select id="product-select" class="form-select" size="2" aria-label="size 3 select example"></select>
+                                </div>
+                                
+                                <div class="p-2 col-5">
+                                <label for="product-qty">Cantidad:</label>
+                                <input class="" type="number" id="product-qty" value="1" min="1">
+                                <button id="add-to-cart" class="btn btn-primary">Agregar al carrito</button>
+                                </div>
+                                
+                              </div>
+                              <br>
+                              
+                              <h2>Carrito:</h2>
+
+                              <table class="table table-bordered" id="cart-table">
+                                <thead>
+                                  <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot>
+                                  <tr class="">
+                                    <td colspan="3">Total:</td>
+                                    <td id="cart-total" class="fs-3"> $0.00</td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                              <div class="d-flex flex-row-reverse">
+                                <div class="">
+                                    <button id="checkout" class="btn btn-success btn-lg ">Finalizar compra</button>
+                                </div>
+                               
+                              </div>
+                             
+                              
+                              <h2>Historial de compras:</h2>
+                              <table class="table table-bordered" id="history-table">
+                                <thead>
+                                  <tr>
+                                    <th>Compra</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                  </tr>
+                                </thead>
+                                <tbody class=""></tbody>
+                              </table>
+
+
+
+                          
                           </div>
                         </div>
                         </div>
