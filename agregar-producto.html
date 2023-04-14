@@ -206,13 +206,13 @@
                               </div>
                               <div class="panel-body">
                                <div class="col-md-12">
-                                <form method="post" action="add_product.php" class="clearfix">
+                                <form method="post" id="product-form" action="add_product.php" class="clearfix">
                                     <div class="form-group">
                                       <div class="input-group">
                                         <span class="input-group-addon">
                                          <i class="glyphicon glyphicon-th-large"></i>
                                         </span>
-                                        <input type="text" class="form-control" name="product-title" placeholder="Descripción">
+                                        <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Descripción">
                                      </div>
                                     </div>
                                    
@@ -222,17 +222,9 @@
                                        <div class="col-md-4">
                                          <div class="input-group">
                                            <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-shopping-cart"></i>
-                                           </span>
-                                           <input type="number" class="form-control" name="product-quantity" placeholder="Cantidad">
-                                        </div>
-                                       </div>
-                                       <div class="col-md-4">
-                                         <div class="input-group">
-                                           <span class="input-group-addon">
                                              <i class="glyphicon glyphicon-usd"></i>
                                            </span>
-                                           <input type="number" class="form-control" name="buying-price" placeholder="Precio de compra">
+                                           <input type="number" class="form-control" id="costo" name="costo" placeholder="Precio de compra">
                                            <span class="input-group-addon">.00</span>
                                         </div>
                                        </div>
@@ -241,7 +233,7 @@
                                             <span class="input-group-addon">
                                               <i class="glyphicon glyphicon-usd"></i>
                                             </span>
-                                            <input type="number" class="form-control" name="saleing-price" placeholder="Precio de venta">
+                                            <input type="number" class="form-control" id="product-price" name="product-price" placeholder="Precio de venta">
                                             <span class="input-group-addon">.00</span>
                                          </div>
                                         </div>
@@ -311,16 +303,10 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
+ 
     <!-- app scripts -->
-    <script src="js/app.js"></script>
+    <script src="js/products.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 

@@ -1,5 +1,20 @@
-  
-  //Codigo de Grafico de Venta
+const ventas = JSON.parse(sessionStorage.getItem('registrosVentas'));  
+let purchaseNumber = 0;
+let totalventas = 0;
+ventas.forEach(function(purchase) {
+    let purchaseTotal = 0;    
+    purchase.forEach(function(item) {
+      purchaseTotal += item.total;
+      
+    });
+    totalventas += purchaseTotal;
+    purchaseNumber++;
+  });
+
+
+
+
+ /* //Codigo de Grafico de Venta
   // Obtener una referencia al elemento canvas del DOM
   const $grafica = document.querySelector("#grafica");
   // Las etiquetas son las que van en el eje X. 
@@ -32,6 +47,6 @@
       }
   });
   
-  
+  */
   
   

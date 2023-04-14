@@ -1,20 +1,15 @@
+const products = JSON.parse(sessionStorage.getItem('productos'));
 
-
-
-
-const products = [
-    { name: 'Complejo B', price: 10.99 },
-    { name: 'Foskrol', price: 15.99 },
-    { name: 'Acetaminofen', price: 20.99 },
-    { name: 'Colageno Hidrolizado', price: 25.99 },
-    { name: 'Alcarlzelsert BOOST', price: 30.99 }
-  ];
-
+ 
+  
+  
   let cart = [];
   let total = 0;
-  let history = [];
+  let history = sessionStorage.getItem('registrosVentas')==null ? []: JSON.parse(sessionStorage.getItem('registrosVentas')); 
 
-  const productSelect = document.getElementById('product-select');
+
+
+    const productSelect = document.getElementById('product-select');
   const productQty = document.getElementById('product-qty');
   const addToCartButton = document.getElementById('add-to-cart');
   const cartTableBody = document.querySelector('#cart-table tbody');
@@ -27,7 +22,10 @@ const products = [
     option.value = product.name;
     option.innerHTML = product.name + ' - $' + product.price.toFixed(2);
     productSelect.appendChild(option);
-  });
+  });  
+
+  updateHistory();
+  
 
   function updateCart() {
     cartTableBody.innerHTML = '';
@@ -69,6 +67,8 @@ const products = [
 
   function checkout() {
     history.push(cart);
+    sessionStorage.setItem('cantVentas', history.length);
+    sessionStorage.setItem('registrosVentas', JSON.stringify(history));
     cart = [];
     total = 0;
     updateCart();
@@ -115,8 +115,14 @@ const products = [
     });
   }
 
-  addToCartButton.addEventListener('click', addToCart);
-  checkoutButton.addEventListener('click', checkout);
+
+    addToCartButton.addEventListener('click', addToCart);
+    checkoutButton.addEventListener('click', checkout);
+
+
+
+
+
   
 
 
